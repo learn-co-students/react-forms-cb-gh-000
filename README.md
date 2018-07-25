@@ -1,8 +1,8 @@
 # React Controlled Components
 
-## Overview 
+## Overview
 
-In this lesson, we'll discuss components and how to use components to set and get values in form elements. 
+In this lesson, we'll discuss components and how to use components to set and get values in form elements.
 
 ## Objectives
 1. Explain how React uses `value` on, e.g., `<input>`
@@ -10,13 +10,13 @@ In this lesson, we'll discuss components and how to use components to set and ge
 3. Describe strategies for using controlled components
 4. Use controlled inputs to validate values
 5. Distinguish between `value` and `defaultValue` in a React controlled component
-   
-## Code Along 
+
+## Code Along
 
 If you want to code along there is starter code in the `src` folder. Make sure to run `npm install && npm start` to see the code in the browser.
 
 ## Form basics
-![You'll be writing a lot of forms in React.](http://s2.quickmeme.com/img/95/95a52393032e643e9817eda6d7485cc770865ea6929278386c8e723a6ca42adc.jpg)
+
 
 Forms in React are fairly straight-forward and similar to regular HTML elements, albeit with a few changes that we need to be aware of.
 
@@ -31,7 +31,7 @@ To control the value of these inputs, we use a prop specific to that type of inp
 To listen for changes to the value of an input, we simply pass in the `onChange` prop with a callback function. Default values are set using either the regular value prop (`value`, `checked`, ...) _or_ the `defaultValue`/`defaultChecked` prop. This depends on if we're using an uncontrolled or controlled component. Read on to find out the difference!
 
 ## Uncontrolled vs controlled components
-![Kpop](https://media.giphy.com/media/QcnfLD17Ebt28/giphy.gif)
+
 
 React provides us with two ways of setting and getting values in form elements. These two methods are called _uncontrolled_ and _controlled_ components. The differences are subtle, but it's important to recognize them — and use them accordingly (spoiler: most of the time, we'll use _controlled_ components).
 
@@ -52,12 +52,12 @@ import React from 'react';
 class ControlledInput extends React.Component {
   constructor() {
     super();
-    
+
     this.state = {
       value: '',
     };
   }
-  
+
   handleChange = event => {
     this.setState({
       value: event.target.value,
@@ -66,10 +66,10 @@ class ControlledInput extends React.Component {
 
   render() {
     return (
-      <input 
-        type="text" 
-        value={this.state.value} 
-        onChange={this.handleChange} 
+      <input
+        type="text"
+        value={this.state.value}
+        onChange={this.handleChange}
       />
     );
   }
@@ -90,7 +90,7 @@ ReactDOM.render(
 );
 ```
 
-As you can see, we can easily define the initial value by setting the initial `value` property on the state to whatever we want. 
+As you can see, we can easily define the initial value by setting the initial `value` property on the state to whatever we want.
 
 Using a controlled component is the preferred way to do things in React — it allows us to keep _all_ component state in the React state, instead of relying on the DOM to retrieve the element's value through its internal state. Whenever our state changes, the component re-renders, rendering the input with the new updated value. If we don't update the state, our input wouldn't update when the user would type. In other words, we need to update our input's state _programmatically_.
 
