@@ -12,7 +12,7 @@ In this lesson, we'll discuss how to set up a controlled form in React.
 4. Use controlled inputs to validate values
 5. Distinguish between `value` and `defaultValue` in a React controlled component
 
-## Code Along
+## Code Along h
 
 If you want to code along there is starter code in the `src` folder. Make sure
 to run `npm install && npm start` to see the code in the browser.
